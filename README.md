@@ -1,17 +1,58 @@
-# XIE Alumni Portal
+# 🎓 XIE Alumni Portal
 
-This is a web-based alumni portal built using HTML, CSS, JavaScript, PHP, and MySQL.
+Welcome to the **Xavier Institute of Engineering Alumni Portal** — a full-stack web application designed to connect alumni across the globe, showcase achievements, and strengthen the alumni network.
 
-## Features
-- Alumni registration & login
-- Job postings
-- Events & media gallery
-- Admin dashboard
 
-## How to Run Locally
-1. Install XAMPP
-2. Copy this folder into `htdocs`
-3. Import `alumni_portal.sql` in phpMyAdmin
-4. Rename `config-sample.php` to `config.php` and update credentials
-5. Start Apache & MySQL
-6. Go to `http://localhost/alumni-portal` in your browser
+---
+
+## 🌟 Key Features
+
+🔐 **Secure Login & Registration**  
+- Separate login for Alumni and Admin  
+- Password-protected access and session management  
+
+🗂️ **Searchable Alumni Directory**  
+- Search alumni by name, batch, department, or current role  
+
+🗓️ **Events & Announcements**  
+- Post and view upcoming alumni meets, webinars, reunions, and more  
+
+📸 **Media Gallery**  
+- Photos & videos from past alumni events  
+
+🗺️ **Global Alumni Map**  
+- Interactive map showing alumni locations across the world (using Leaflet.js)
+
+💼 **Job & Internship Opportunities**  
+- Alumni can share and view career opportunities
+
+💬 **Admin-Alumni Chat**  
+- Real-time communication with the admin dashboard
+
+🛠️ **Admin Panel**  
+- Add/edit events, approve alumni registrations, post updates
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: HTML5, CSS3, JavaScript  
+- **Backend**: PHP  
+- **Database**: MySQL  
+- **Local Server**: XAMPP
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the Alumni Portal on your local machine:
+
+### 📌 Prerequisites
+- XAMPP (Apache + MySQL)
+- A web browser (e.g., Chrome)
+
+### ⚙️ Installation Steps
+
+1. **Clone the repository** or [Download ZIP](https://kuleaniruddha.github.io/alumni-portal/)
+
+2. Move the folder to your `htdocs` directory:
