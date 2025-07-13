@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIE Alumni Portal</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Swiper.js CDN (For Memories Section) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1>XIE ALUMNI PORTAL</h1> <!-- Centered title -->
+        <div class="header-bottom">  <!-- Wrapper for logo and nav -->
+            <div class="logo-container">
+                <img src="Picsart_25-02-06_18-50-34-070_20250209_141225_0000.png" alt="XIE Logo" class="college-logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">🏠 Home</a></li>
+                    <li><a href="#directory">📖 Alumni Directory</a></li>
+                    <li><a href="#events">📅 Events</a></li>
+                    <li><a href="#jobs">💼 Job Board</a></li>
+                    <li><a href="#memories">📸 Memories</a></li>
+                    <li><a href="#contact">📞 Contact</a></li>
+                    <li><a href="http://localhost/xie_alumni/login.html" class="login-btn">🚪 Login</a></li>
+
+              </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section (Home) -->
+    <section id="home">
+        <div class="hero-text">
+            <h2>Welcome to Xavier Institute of Engineering Alumni Portal</h2>
+            <p>Connect, Collaborate, and Grow with your Alumni Network</p>
+            <a href="login.html" class="btn">Join Now</a>
+        </div>
+    </section>
+
+    <section id="alumni-directory">
+        <h2>Alumni Directory</h2>
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search" 
+                placeholder="Search alumni by name, batch, or job..." 
+                aria-label="Search alumni"
+                autocomplete="off"
+            >
+            <div id="loading-message" class="loading-message" style="display:none;">Loading...</div>
+        </div>
+        <div id="alumni-list">
+            <!-- Alumni data will be loaded here dynamically -->
+        </div>
+    </section>
+    
+    
+    <script src="script.js"></script> <!-- Link JavaScript file -->
+    
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>📅 Upcoming Alumni Events</h2>
+        <div class="event-list">
+            <div class="event-card">
+                <h3>Alumni Meetup 2025</h3>
+                <p><i class="fas fa-map-marker-alt"></i> XIE Campus, Mumbai</p>
+                <p><i class="far fa-calendar-alt"></i> March 15, 2025</p>
+                <button class="btn" onclick="window.location.href='reg.html'">Register Now</button>
+
+            </div>
+            <div class="event-card">
+                <h3>Webinar on AI Careers</h3>
+                <p><i class="fas fa-laptop"></i> Online Event</p>
+                <p><i class="far fa-calendar-alt"></i> April 5, 2025</p>
+                <button class="btn" onclick="window.location.href='reg.html'">Join Webinar</button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Board Section -->
+    <section id="jobs">
+        <h2>💼 Job Board</h2>
+        <div class="job-list">
+            <div class="job-card">
+                <h3>Software Developer</h3>
+                <p><i class="fas fa-building"></i> Amazon</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                <p><i class="fas fa-money-bill-wave"></i> ₹15-18 LPA</p>
+                <a href="apply.html" class="btn">Apply Now</a>
+
+            </div>
+
+            <div class="job-card">
+                <h3>Data Engineer</h3>
+                <p><i class="fas fa-building"></i> IBM</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                <p><i class="fas fa-money-bill-wave"></i> ₹12-15 LPA</p>
+                <a href="apply.html" class="btn">Apply Now</a>
+
+            </div>
+
+            <div class="job-card">
+                <h3>Cloud Architect</h3>
+                <p><i class="fas fa-building"></i> Microsoft</p>
+                <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
+                <p><i class="fas fa-money-bill-wave"></i> ₹20-25 LPA</p>
+                <a href="apply.html" class="btn">Apply Now</a>
+
+            </div>
+
+            <div class="job-card">
+                <h3>Cyber Security Analyst</h3>
+                <p><i class="fas fa-building"></i> Deloitte</p>
+                <p><i class="fas fa-map-marker-alt"></i> Pune, India</p>
+                <p><i class="fas fa-money-bill-wave"></i> ₹14-17 LPA</p>
+                <a href="apply.html" class="btn">Apply Now</a>
+
+            </div>
+        </div>
+    </section>
+    
+<!-- Donation Section -->
+<section id="donation">
+    <h2>🎓 Support Your Alma Mater</h2>
+    <p>Your contributions help fund scholarships, infrastructure, and events at XIE.</p>
+    <form id="donation-form">
+        <label for="donation-amount">Select Amount:</label>
+        <select id="donation-amount" name="amount">
+            <option value="500">₹500</option>
+            <option value="1000">₹1,000</option>
+            <option value="5000">₹5,000</option>
+            <option value="10000">₹10,000</option>
+            <option value="custom">Custom</option>
+        </select>
+        
+        <input type="number" id="custom-amount" name="custom-amount" placeholder="Enter Custom Amount" min="1" style="display: none;">
+        
+        <label for="payment-mode">Payment Method:</label>
+        <select id="payment-mode" name="payment-mode">
+            <option value="upi">UPI</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="debit-card">Debit Card</option>
+            <option value="net-banking">Net Banking</option>
+        </select>
+        
+        <button type="submit" class="btn">Donate Now</button>
+    </form>
+</section>
+
+<!-- Script for Validations & Custom Amount Handling -->
+<script>
+    document.getElementById("donation-amount").addEventListener("change", function () {
+        var customAmount = document.getElementById("custom-amount");
+        if (this.value === "custom") {
+            customAmount.style.display = "block";
+            customAmount.setAttribute("required", "true");
+        } else {
+            customAmount.style.display = "none";
+            customAmount.removeAttribute("required");
+        }
+    });
+
+    document.getElementById("donation-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let amount = document.getElementById("donation-amount").value;
+        let customAmount = document.getElementById("custom-amount").value.trim();
+
+        // Validate custom amount if selected
+        if (amount === "custom" && (customAmount === "" || isNaN(customAmount) || customAmount <= 0)) {
+            alert("Please enter a valid custom donation amount.");
+            return;
+        }
+
+    // Check if UPI is selected
+    const paymentMode = document.getElementById("payment-mode").value;
+    if (paymentMode === "upi") {
+        window.open("GPAY.html", "_blank");  // Open the QR page in a new tab
+    } else {
+        alert("Redirecting to secure payment gateway...");
+        // Redirect to respective gateway for other modes
+    }
+    });
+</script>
+
+
+
+    <!-- Memories Section (Swiper) -->
+    <section id="memories">
+        <h2>📸 Alumni Memories</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="ALUMNI1.jpg" alt="Alumni Event 2024"></div>
+                <div class="swiper-slide"><img src="ALUMNI2.jpeg" alt="Batch Photo 2018"></div>
+                <div class="swiper-slide"><img src="ALUMNI3.jpg" alt="Batch Photo 2018"></div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="alumni-map">
+        <h2>🌎 Our Alumni Across the Globe</h2>
+        <p>Explore where our Xavier Institute of Engineering alumni are making an impact worldwide.</p>
+        <a href="alumnimap.html" class="btn" style="padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 8px; text-decoration: none; font-size: 16px;">
+            View Alumni Map
+        </a>
+    </section>
+    
+    
+   
+    <!-- Contact -->
+    <section id="contact">
+        <h2>📞 Contact Us</h2>
+        <p>Email: alumni@xie.edu.in | Phone: +91 9876543210</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 XIE Alumni Portal | Designed for Xavier Institute of Engineering</p>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script defer src="script.js"></script> <!-- Main Script -->
+
+
+    <!-- Swiper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper Initialization -->
+    <script src="swiper.js"></script>
+
+    <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</body>
+</html>

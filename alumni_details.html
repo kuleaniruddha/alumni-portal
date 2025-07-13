@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Details</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #8544c9, #4386fa);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Alumni Details Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+            font-weight: 400;
+        }
+
+        /* Add a Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background: #ff4b5c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="alumni-photo" src="default.jpg" alt="Alumni Photo" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px; border: 3px solid white;">
+        <h2 id="alumni-name"></h2>
+        <p id="alumni-batch"></p>
+        <p id="alumni-job"></p>
+        <a href="index.html" class="back-btn">🔙 Go Back</a>
+    </div>
+
+    <script>
+        // Get alumni data from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("alumni-name").innerText = params.get("name") || "Unknown Alumni";
+        document.getElementById("alumni-batch").innerText = "🎓 Batch: " + (params.get("batch") || "N/A");
+        document.getElementById("alumni-job").innerText = "💼 Current Job: " + (params.get("job") || "N/A");
+    
+        // Set Alumni Photo (if available)
+        const photo = params.get("photo");
+        if (photo && photo !== "null") {
+            document.getElementById("alumni-photo").src = photo;
+        }
+    </script>
+</body>
+</html>

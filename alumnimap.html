@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XIE Alumni World Map</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fc;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #003366;
+            font-size: 2rem;
+        }
+
+        #map {
+            height: 550px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 3px solid #003366;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🌍 Xavier Alumni Across the Globe</h2>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        var map = L.map('map').setView([20.5937, 78.9629], 3);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const alumniLocations = [
+        // Major Indian Cities
+        { name: "Amit - Mumbai", lat: 19.0760, lon: 72.8777 },
+        { name: "Neha - Pune", lat: 18.5204, lon: 73.8567 },
+        { name: "Ravi - Bangalore", lat: 12.9716, lon: 77.5946 },
+        { name: "Divya - Delhi", lat: 28.6139, lon: 77.2090 },
+        { name: "Arjun - Chennai", lat: 13.0827, lon: 80.2707 },
+        { name: "Sneha - Hyderabad", lat: 17.3850, lon: 78.4867 },
+        { name: "Mehul - Ahmedabad", lat: 23.0225, lon: 72.5714 },
+        
+        // More Indian Alumni (Fake Names)
+        { name: "Karan - Jaipur", lat: 26.9124, lon: 75.7873 },
+        { name: "Isha - Nagpur", lat: 21.1458, lon: 79.0882 },
+        { name: "Tushar - Indore", lat: 22.7196, lon: 75.8577 },
+        { name: "Pooja - Lucknow", lat: 26.8467, lon: 80.9462 },
+        { name: "Raj - Patna", lat: 25.5941, lon: 85.1376 },
+        { name: "Ayesha - Surat", lat: 21.1702, lon: 72.8311 },
+        { name: "Nikhil - Bhopal", lat: 23.2599, lon: 77.4126 },
+        { name: "Shruti - Thane", lat: 19.2183, lon: 72.9781 },
+        { name: "Deepak - Kochi", lat: 9.9312, lon: 76.2673 },
+        { name: "Geeta - Chandigarh", lat: 30.7333, lon: 76.7794 },
+        { name: "Rahul - Noida", lat: 28.5355, lon: 77.3910 },
+        { name: "Snehal - Nashik", lat: 19.9975, lon: 73.7898 },
+        { name: "Varun - Vadodara", lat: 22.3072, lon: 73.1812 },
+        { name: "Kavya - Mysuru", lat: 12.2958, lon: 76.6394 },
+        { name: "Sameer - Guwahati", lat: 26.1445, lon: 91.7362 },
+        { name: "Payal - Vijayawada", lat: 16.5062, lon: 80.6480 },
+        { name: "Ankit - Mangalore", lat: 12.9141, lon: 74.8560 },
+        { name: "Reema - Amritsar", lat: 31.6340, lon: 74.8723 },
+
+        // International Alumni
+        { name: "John - San Francisco, USA", lat: 37.7749, lon: -122.4194 },
+        { name: "Priya - London, UK", lat: 51.5074, lon: -0.1278 },
+        { name: "Sara - Sydney, Australia", lat: -33.8688, lon: 151.2093 },
+        { name: "Ahmed - Dubai, UAE", lat: 25.2048, lon: 55.2708 },
+        { name: "Liu - Beijing, China", lat: 39.9042, lon: 116.4074 },
+        { name: "Tom - Toronto, Canada", lat: 43.651070, lon: -79.347015 },
+        { name: "Anjali - Berlin, Germany", lat: 52.5200, lon: 13.4050 },
+
+        // Additional International Alumni
+        { name: "Carlos - Madrid, Spain", lat: 40.4168, lon: -3.7038 },
+        { name: "Maria - Rome, Italy", lat: 41.9028, lon: 12.4964 },
+        { name: "Mikhail - Moscow, Russia", lat: 55.7558, lon: 37.6173 },
+        { name: "Olivia - Paris, France", lat: 48.8566, lon: 2.3522 },
+        { name: "Santiago - Buenos Aires, Argentina", lat: -34.6037, lon: -58.3816 },
+        { name: "Isabella - Rio de Janeiro, Brazil", lat: -22.9068, lon: -43.1729 },
+        { name: "Max - New York City, USA", lat: 40.7128, lon: -74.0060 },
+        { name: "Lina - Jakarta, Indonesia", lat: -6.2088, lon: 106.8456 },
+        { name: "Theo - Amsterdam, Netherlands", lat: 52.3676, lon: 4.9041 },
+        { name: "Anna - Stockholm, Sweden", lat: 59.3293, lon: 18.0686 }
+    ];
+
+        // Add markers to the map
+        alumniLocations.forEach(alumni => {
+            L.marker([alumni.lat, alumni.lon])
+                .addTo(map)
+                .bindPopup(`<b>${alumni.name}</b>`);
+        });
+    </script>
+</body>
+</html>
